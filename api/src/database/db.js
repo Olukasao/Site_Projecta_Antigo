@@ -1,27 +1,32 @@
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
+/*const connection = mysql.createConnection({
   host: "localhost",
   user: "projecta",
   password: process.env.DB_PASSWORD,
   database: "projecta"
-});
+});*/
 
-/*const connection = mysql.createConnection({
+const pool = mysql.createPool({
   host: "srv792.hstgr.io",
-  user: "u654914095_root",
+  user: "u654914095_projecta",
   password: process.env.DB_PASSWORD,
-  database: "u654914095_projectaempre"
+  database: "u654914095_projecta",
+
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
-*/
 
-
-connection.connect((err) => {
+pool.getConnection((err, conn) => {
   if (err) {
     console.error("Erro ao conectar:", err);
-  } else {
-    console.log("Banco conectado");
+    return;
   }
+
+  console.log("Banco conectado");
+
+  conn.release(); // 🔥 MUITO IMPORTANTE
 });
 
-module.exports = connection;
+module.exports = pool;
