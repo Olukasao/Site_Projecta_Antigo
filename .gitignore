@@ -1,0 +1,13 @@
+
+
+# Credenciais e pacotes de deploy -- nunca versionar (o repositório é público)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+!front/.env.production
+deploy/env-hostinger.txt
+deploy/*.zip
+.kilo/

@@ -1,0 +1,13 @@
+# Variáveis para colar no painel da Hostinger (Node.js Web App). Preencha lá, não aqui.
+NODE_ENV=
+PORT=
+BASE_URL=
+FRONTEND_URL=
+CORS_ORIGINS=
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+JWT_SECRET=
+DB_CONNECTION_LIMIT=
