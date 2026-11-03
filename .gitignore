@@ -11,3 +11,8 @@
 deploy/env-hostinger.txt
 deploy/*.zip
 .kilo/
+
+# Dumps de banco e pacotes de deploy: nunca no git (o repositório é público)
+*.sql
+deploy/*.tar.gz
+deploy/*.tgz
